@@ -27,7 +27,11 @@ struct ContentView: View {
                             //print("onCommit")
                             self.nodoList.insert(self.nodo, at: 0)
                             print("Added item: \(self.nodoList)")
+                            
+                            //UIApplication.shared.keyWindow?.endEditing(true) 필요없음 저절로 내려감
+                            
                             self.nodo = ""
+                            
                         }.padding(.all, 12)
                     }.background(Color.green)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -36,14 +40,75 @@ struct ContentView: View {
                 }
                 
                 
-                List (nodoList, id: \.self) { item in
-                    Cell(title: item)
+                /*List (nodoList, id: \.self) { item in
+                    NoDoRow(noDoItem: item)
+                }*/
+                List {
+                    ForEach(self.nodoList, id: \.self) { item in
+                        NoDoRow(noDoItem: item, isDone: false)
+                    }
+                    .onDelete(perform: deleteItem)
                 }
                 
             }.navigationBarTitle(Text("NoDo"))
             
             
             
+        }
+    }
+    
+    func deleteItem(at offsets: IndexSet) {
+        guard let index = Array(offsets).first else { return }
+        //print("Removed: \(index)")
+        print("Removed: \(self.nodoList[index])")
+        self.nodoList.remove(at: index)
+        
+        
+    }
+}
+
+
+
+
+struct NoDoRow: View {
+    @State var noDoItem: String = ""
+    @State var isDone = false
+    //@State var noDoList: String
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 2) {
+            Group {
+                HStack {
+                    Text(noDoItem)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    
+                    Spacer()
+                    
+                    Image(systemName: (self.isDone) ? "checkmark": "square")
+                    .padding()
+                    
+
+                }
+                
+                HStack(alignment: .center, spacing: 3) {
+                    Spacer()
+                    Text("Time Added...")
+                    .foregroundColor(.white)
+                    .italic()
+                    .padding(.all, 4)
+                }.padding(.bottom, 5)
+                
+                
+            }.padding(.all, 4)
+        }.opacity((self.isDone) ? 0.3 : 1)
+        .background( (self.isDone) ?  Color.gray : Color.pink)
+        .clipShape(RoundedRectangle(cornerRadius: 5))
+        .padding()
+            .onTapGesture {
+                self.isDone.toggle()
+                print("Tapped \(self.isDone)")
         }
     }
 }
@@ -69,6 +134,13 @@ struct Cell: View {
             }
         }.background(Color.gray).frame(height: 100)
         .cornerRadius(5)
+    }
+}
+
+
+struct Hello: View {
+    var body: some View {
+        Text("Hello View")
     }
 }
 

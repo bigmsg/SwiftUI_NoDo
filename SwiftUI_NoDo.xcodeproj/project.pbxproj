@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33052B5C237A430D00A3541B /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33052B5B237A430D00A3541B /* OtherView.swift */; };
 		33DF206C237939E50037BB90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF206B237939E50037BB90 /* AppDelegate.swift */; };
 		33DF206E237939E50037BB90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF206D237939E50037BB90 /* SceneDelegate.swift */; };
 		33DF2070237939E50037BB90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF206F237939E50037BB90 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33052B5B237A430D00A3541B /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		33DF2068237939E50037BB90 /* SwiftUI_NoDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_NoDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DF206B237939E50037BB90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DF206D237939E50037BB90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				33DF206B237939E50037BB90 /* AppDelegate.swift */,
 				33DF206D237939E50037BB90 /* SceneDelegate.swift */,
 				33DF206F237939E50037BB90 /* ContentView.swift */,
+				33052B5B237A430D00A3541B /* OtherView.swift */,
 				33DF2071237939E60037BB90 /* Assets.xcassets */,
 				33DF2076237939E60037BB90 /* LaunchScreen.storyboard */,
 				33DF2079237939E60037BB90 /* Info.plist */,
@@ -149,6 +152,7 @@
 				33DF206C237939E50037BB90 /* AppDelegate.swift in Sources */,
 				33DF206E237939E50037BB90 /* SceneDelegate.swift in Sources */,
 				33DF2070237939E50037BB90 /* ContentView.swift in Sources */,
+				33052B5C237A430D00A3541B /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
